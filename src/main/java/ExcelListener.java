@@ -12,10 +12,19 @@ public class ExcelListener extends AnalysisEventListener<Model> {
             m.setSumText(model.getSumText().replaceAll("\\pS|\\pC", ""));
         }
         System.out.println("****总结：" + m.getSumText());
-        if (model.getWriteTime() != null) {
+        if (model.getGainText() != null) {
             m.setGainText(model.getGainText().replaceAll("\\pS|\\pC", ""));
         }
         System.out.println("****收获：" + m.getGainText());
+
+        if (model.getUselessText() != null) {
+            m.setUselessText(model.getUselessText().replaceAll("\\pS|\\pC", ""));
+        }
+        System.out.println("****问题：" + m.getUselessText());
+
+        System.out.println("-----------------------------------");
+        System.out.println();
+
         GlobalVariables.DATA.add(m);
     }
 

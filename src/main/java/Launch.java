@@ -81,6 +81,11 @@ public class Launch {
             }
         }
         for (int i = 0; i < GlobalVariables.DATA.size(); i++) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             String s = sendPost(GlobalVariables.TOKEN, GlobalVariables.DATA.get(i));
             if (s.contains("20000")) {
                 System.out.println(GlobalVariables.DATA.get(i).getWriteTime() + ": 成功");
